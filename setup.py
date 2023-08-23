@@ -4,7 +4,7 @@ with open('README.md','r') as f:
     description = f.read()
 
 setuptools.setup(
-    name='text summarizer',
+    name='text_summarizer',
     version='0.0.1',
     author='Jake',
     author_email='awaistahseenaccoun@gmail.com',
@@ -16,4 +16,5 @@ setuptools.setup(
     description='A text summarization tool',
     long_description=description,
     packages=setuptools.find_packages(where="src")
+
 )
