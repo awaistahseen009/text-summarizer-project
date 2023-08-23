@@ -5,3 +5,8 @@ data_extraction:
   source: https://github.com/awaistahseen009/datasets/raw/main/samsum_data.zip
   local_data: artifacts/data_extraction/data.zip
   unzip_dir: artifacts/data_extraction
+
+data_validation:
+  root_dir: artifacts/data_validation
+  status_file: artifacts/data_validation/status.txt
+  all_req_files: ['train','test','validation']

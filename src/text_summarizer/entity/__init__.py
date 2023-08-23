@@ -7,3 +7,9 @@ class DataExtractionConfig:
     source: str
     local_data: Path
     unzip_dir: Path
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir:Path
+    status_file:str
+    all_req_files:list
