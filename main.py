@@ -2,6 +2,8 @@ from src.text_summarizer.pipeline.stage_01_data_extraction import DataExtraction
 from src.text_summarizer.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from src.text_summarizer.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
 from src.text_summarizer.pipeline.stage_04_model_training import ModelTrainingPipeline
+from src.text_summarizer.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
+
 
 from src.text_summarizer.logging import logger
 try:
@@ -35,7 +37,16 @@ try:
     logger.info(f"Stage Model Training started")
     model_training=ModelTrainingPipeline()
     model_training.main()
-    logger.info(f"Stage Model Training ended ended")
+    logger.info(f"Stage Model Training ended")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+try:
+    logger.info(f"Stage Evaluation started")
+    model_evaluation=ModelEvaluationPipeline()
+    model_evaluation.main()
+    logger.info(f"Stage Model Evaluation ended")
 except Exception as e:
     logger.exception(e)
     raise e
